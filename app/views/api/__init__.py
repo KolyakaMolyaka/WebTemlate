@@ -1,0 +1,1 @@
+from .posts_api import posts_api_bp
