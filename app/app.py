@@ -11,12 +11,14 @@ def create_app():
 	db.init_app(app)
 	create_db(app)
 
-
 	""" VIEWS """
 	from .views.index import index_bp
 	app.register_blueprint(index_bp)
 
-	from .views.api import posts_api_bp
+	from .views.api import (posts_api_bp, albums_api_bp, todos_api_bp, comments_api_bp)
 	app.register_blueprint(posts_api_bp)
+	app.register_blueprint(albums_api_bp)
+	app.register_blueprint(todos_api_bp)
+	app.register_blueprint(comments_api_bp)
 
 	return app
